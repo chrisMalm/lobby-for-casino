@@ -11,7 +11,6 @@ export const StudiosComponent = () => {
     setActiveTag,
     activeStudio,
     setActiveStudio,
-    setCurrentPage,
   } = useGames()
   const [expanded, setExpanded] = useState(false)
 
@@ -23,7 +22,6 @@ export const StudiosComponent = () => {
     handleclickedStudios(studioId)
     setActiveStudio(index)
     setActiveTag(0)
-    setCurrentPage(1)
   }
   return (
     <Box className="flex flex-col items-center pt-2 w-full overflow-y-hidden">
