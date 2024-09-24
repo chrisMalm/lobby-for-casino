@@ -1,9 +1,13 @@
-import './index.css'; // Adjust the path if your CSS file is named differently
+import './index.css'; 
+import { GameProvider } from './context/gamesContext';
+import { Layout } from './layout/layout';
 
 
 export const App = () => {
   return (
-    <div className='underlin bg-black'>hej</div>
+    <GameProvider>
+      <Layout />
+    </GameProvider>
   );
 }
 
