@@ -1,5 +1,5 @@
 import { Box, ButtonGroup, Button, IconButton, Collapse } from '@mui/material'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useGames } from '../context/gamesContext'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
@@ -21,7 +21,7 @@ export const CategoriesComponent = () => {
   }
   const handleTagClick = (index: number, id: number) => {
     handleCategoryClick(id)
-    setActiveTag(index) // Update active tag
+    setActiveTag(index)
     setActiveStudio(null)
     setCurrentPage(1)
   }

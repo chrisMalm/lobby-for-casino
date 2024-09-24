@@ -34,7 +34,7 @@ export const StudiosComponent = () => {
             key={studio.id}
             onClick={() => handleStudioClick(index, studio.id)}
             sx={{
-              width: '150px', // Adjust as needed
+              width: '150px',
               m: 1,
               border:
                 activeStudio === index
@@ -78,9 +78,9 @@ export const StudiosComponent = () => {
               {filteredStudiosOnCurrency.slice(6).map((studio, index) => (
                 <Card
                   key={studio.id}
-                  onClick={() => handleStudioClick(index + 6, studio.id)} // Adjust for correct index
+                  onClick={() => handleStudioClick(index + 6, studio.id)}
                   sx={{
-                    width: '150px', // Adjust as needed
+                    width: '150px',
                     m: 1,
                     border:
                       activeStudio === index + 6

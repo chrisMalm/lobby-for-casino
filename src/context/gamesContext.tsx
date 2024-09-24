@@ -7,11 +7,10 @@ import { Tag } from '../types/categoriesTypes'
 
 const GameContext = createContext<GameContextType | undefined>(undefined)
 
-// Create a provider component
 export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   const [studios, setStudios] = useState<Studios[]>([])
-  const [activeTag, setActiveTag] = useState<number>(0) // Initialize activeTag
-  const [activeStudio, setActiveStudio] = useState<number | null>(null) // Initialize activeStudio
+  const [activeTag, setActiveTag] = useState<number>(0)
+  const [activeStudio, setActiveStudio] = useState<number | null>(null)
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [filteredGamesOnCurrency, setFilteredGamesOnCurrency] = useState<
     Game[]
@@ -25,7 +24,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
     Studios[]
   >([])
   const [currency, setCurrency] = useState<Currency>('EUR') // Default currency
-  const [tags, setTags] = useState<Tag[]>([]) // add state for categories
+  const [tags, setTags] = useState<Tag[]>([])
 
   const handleCategoryClick = (id: number) => {
     const filteredGames = filteredGamesOnCurrency.filter((game) =>
@@ -46,14 +45,13 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     let filteredStudios: Studios[] = []
     // Load games from JSON data
-    const fetchedTags = data.tags // Adjust based on your JSON structure
+    const fetchedTags = data.tags
     // Add "All" option to the tags
-    setTags([{ id: 0, name: 'All' }, ...fetchedTags]) // Add "All" at the beginning
-    setGames(data.games) // Adjust based on your JSON structure
+    setTags([{ id: 0, name: 'All' }, ...fetchedTags])
+    setGames(data.games)
     setStudios(data.studios)
     const filterGamesByCurrency = () => {
       filteredStudios = studios.filter((studio) => {
-        // If blockedCurrencies is an empty string or does not include the selected currency
         return (
           studio.blockedCurrencies === '' ||
           !studio.blockedCurrencies?.includes(currency)
@@ -107,7 +105,6 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-// Create a custom hook for easy access to the context
 export const useGames = () => {
   const context = useContext(GameContext)
   if (!context) {

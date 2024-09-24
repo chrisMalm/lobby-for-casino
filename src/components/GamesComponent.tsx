@@ -1,5 +1,4 @@
 import { Box, Card, CardContent, Typography, Button } from '@mui/material'
-import React from 'react'
 import { useGames } from '../context/gamesContext'
 import { Game } from '../types/gameTypes'
 

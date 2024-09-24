@@ -26,7 +26,6 @@ export const HeaderComponent = () => {
     setActiveTag(0)
     setActiveStudio(null)
   }
-
   return (
     <AppBar position="static">
       <Toolbar className="AAA bg-black ">

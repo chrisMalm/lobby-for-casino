@@ -3,8 +3,6 @@ import { HeaderComponent } from '../components/HeaderComponent'
 import { CategoriesComponent } from '../components/CategoriesComponent'
 import { StudiosComponent } from '../components/StudiosComponent'
 import { GamesComponent } from '../components/GamesComponent'
-import { useState } from 'react'
-import { useGames } from '../context/gamesContext'
 
 export const Layout = () => {
   return (
