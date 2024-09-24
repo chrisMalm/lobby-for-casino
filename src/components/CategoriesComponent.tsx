@@ -5,7 +5,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
 
 export const CategoriesComponent = () => {
-  const { tags, handleCategoryClick, setActiveTag, activeTag } = useGames()
+  const {
+    tags,
+    handleCategoryClick,
+    setActiveTag,
+    activeTag,
+    setActiveStudio,
+    setCurrentPage,
+  } = useGames()
 
   const [expanded, setExpanded] = useState(false)
 
@@ -13,9 +20,10 @@ export const CategoriesComponent = () => {
     setExpanded((prev) => !prev)
   }
   const handleTagClick = (index: number, id: number) => {
-    console.log(id, 'name')
     handleCategoryClick(id)
     setActiveTag(index) // Update active tag
+    setActiveStudio(null)
+    setCurrentPage(1)
   }
   return (
     <Box

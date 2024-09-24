@@ -6,16 +6,27 @@ import {
   Select,
   MenuItem,
 } from '@mui/material'
-import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
-
 import { useGames } from '../context/gamesContext'
 
 export const HeaderComponent = () => {
-  const { currency, setCurrency } = useGames()
+  const {
+    currency,
+    setCurrency,
+    setFilteredGamesByStudio,
+    setFilteredGamesByTag,
+    setActiveTag,
+    setActiveStudio,
+  } = useGames()
+
   const handleCurrencyChange = (event: any) => {
     setCurrency(event.target.value)
+    setFilteredGamesByTag([])
+    setFilteredGamesByStudio([])
+    setActiveTag(0)
+    setActiveStudio(null)
   }
+
   return (
     <AppBar position="static">
       <Toolbar className="AAA bg-black ">

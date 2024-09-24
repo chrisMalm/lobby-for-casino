@@ -7,9 +7,6 @@ import { useState } from 'react'
 import { useGames } from '../context/gamesContext'
 
 export const Layout = () => {
-  const { games } = useGames()
-  console.log(games, 'filtred')
-
   return (
     <>
       <HeaderComponent />
