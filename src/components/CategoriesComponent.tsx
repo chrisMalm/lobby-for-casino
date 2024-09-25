@@ -33,6 +33,12 @@ export const CategoriesComponent = () => {
       pt={2}
       width="100%"
       className="RRR"
+      sx={{
+        overflowY: 'auto',
+        mt: '16px',
+        pb: '16px',
+        maxHeight: 'calc(100vh - 64px)',
+      }}
     >
       <ButtonGroup
         aria-label="tags"

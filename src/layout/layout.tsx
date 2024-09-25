@@ -1,4 +1,4 @@
-import { Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import { HeaderComponent } from '../components/HeaderComponent'
 import { CategoriesComponent } from '../components/CategoriesComponent'
 import { StudiosComponent } from '../components/StudiosComponent'
@@ -6,21 +6,36 @@ import { GamesComponent } from '../components/GamesComponent'
 
 export const Layout = () => {
   return (
-    <>
+    <Container
+      className="bg-containerBg PPPP"
+      maxWidth={false}
+      sx={{
+        flex: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100vh',
+        overflow: 'hidden',
+      }}
+    >
       <HeaderComponent />
-      <Container
-        className="bg-containerBg PPPP"
-        maxWidth={false}
+      <Box
+        className="KKK"
         sx={{
-          width: '100%',
-          height: 'calc(100vh - 64px)',
-          overflowY: 'hidden',
+          flex: 1,
+          height: '100%',
+          marginTop: '64px',
+          overflowY: 'scroll',
+          scrollbarWidth: 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+          pb: '10rem',
         }}
       >
         <CategoriesComponent />
         <StudiosComponent />
         <GamesComponent />
-      </Container>
-    </>
+      </Box>
+    </Container>
   )
 }

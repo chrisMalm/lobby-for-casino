@@ -27,7 +27,15 @@ export const HeaderComponent = () => {
     setActiveStudio(null)
   }
   return (
-    <AppBar position="static">
+    <AppBar
+      sx={{
+        position: 'fixed',
+        top: '0',
+        width: '100%',
+        height: '64px',
+        zIndex: '1000',
+      }}
+    >
       <Toolbar className="AAA bg-black ">
         <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon />
